@@ -1,4 +1,4 @@
-# ISS DATA
+# ISS Azure Data Adapter
 This repository contains an aspnetcore service which listens to data from the ISS and sends it to a specified Azure Eventhub.
 
 ![architecture](./Docs/architecture.png)
