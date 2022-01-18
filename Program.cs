@@ -22,6 +22,19 @@ namespace iss_data
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((context, builder) =>
+            {
+                if (context.HostingEnvironment.IsDevelopment())
+                {
+                    builder
+                        .AddJsonFile("appsettings.Development.json") // general dev defaults go here
+                        .AddJsonFile("appsettings.local.json", true); // sensitive items go here (excluded from git)
+                }
+                else
+                {
+                    builder.AddEnvironmentVariables();
+                }
+            })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

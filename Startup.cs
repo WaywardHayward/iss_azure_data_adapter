@@ -19,16 +19,17 @@ namespace iss_data
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllers();
             services.AddLogging();
             services.AddSingleton<IssTelemetrySchema>((s) => JsonSerializer.Deserialize<IssTelemetrySchema>(File.ReadAllText("Data/iss_telemetry_schema.json")));
             services.AddSingleton<EventHubSender>();
             services.AddHostedService<IssTelemetryService>();
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
