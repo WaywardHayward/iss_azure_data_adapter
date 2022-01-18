@@ -12,11 +12,3 @@ The Following settings are required on top of the standard azure app service set
 | ------------ | ---- | ----------- |
 | EVENT_HUB_CONNECTION_STRING | string | The connection string to the event hub. |
 | EVENT_HUB_NAME | string | The name of the event hub. |
-
-
-
-
-## License
-MIT License
-
-## Contributing
