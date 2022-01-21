@@ -29,7 +29,6 @@ namespace iss_data
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

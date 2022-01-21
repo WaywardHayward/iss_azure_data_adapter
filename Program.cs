@@ -22,7 +22,7 @@ namespace iss_data
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((context, builder) =>
+                /*.ConfigureAppConfiguration((context, builder) =>
             {
                 if (context.HostingEnvironment.IsDevelopment())
                 {
@@ -34,7 +34,7 @@ namespace iss_data
                 {
                     builder.AddEnvironmentVariables();
                 }
-            })
+            })*/
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

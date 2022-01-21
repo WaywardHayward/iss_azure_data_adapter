@@ -9,7 +9,9 @@ The architecture is as follows:
 
 ## App Settings
 
-The Following settings are required on top of the standard azure app service settings to run the function.
+The Following settings are required on top of the standard azure app service settings to run the app service.
+
+These settings are defined in the appsettings.json file.
 
 | Setting Name | Type | Description |
 | ------------ | ---- | ----------- |
