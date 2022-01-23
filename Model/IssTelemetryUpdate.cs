@@ -1,11 +1,12 @@
 using com.lightstreamer.client;
+using iss_azure_data_adapter.Utils;
 
 namespace iss_data.Model
 {
     public class IssTelemetryUpdate : Symbol
     {
         public string Discipline { get; set; }
-        public string MessageType {get;set;} = "IssSensor";        
+        public string MessageType { get; set; } = "IssSensor";
         public string Status { get; private set; }
         public string Indicator { get; private set; }
         public string Color { get; private set; }
@@ -32,7 +33,7 @@ namespace iss_data.Model
             telemetryUpdate.Status = update.getValue("Status.Class");
             telemetryUpdate.Indicator = update.getValue("Status.Indicator");
             telemetryUpdate.Color = update.getValue("Status.Color");
-            telemetryUpdate.TimeStamp = update.getValue("TimeStamp");
+            telemetryUpdate.TimeStamp = IssUtils.ConvertHoursToTimeStamp(update.getValue("TimeStamp")).ToString("yyyy-MM-ddTHH:mm:ss.fff");
             telemetryUpdate.Value = update.getValue("Value");
             telemetryUpdate.CalibratedData = update.getValue("CalibratedData");
 
