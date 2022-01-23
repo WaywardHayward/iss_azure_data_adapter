@@ -44,7 +44,7 @@ namespace iss_data.Services
         private void InitializeSubscription()
         {
             _issTelemetrySubscription = new Subscription("MERGE", _issTelemetry.GetItems, new string[] { "TimeStamp", "Value", "Status.Class", "Status.Indicator", "Status.Color", "CalibratedData" });
-            _issTelemetrySubscription.RequestedMaxFrequency = "3.0";
+            _issTelemetrySubscription.RequestedMaxFrequency = "0.5";
             _issTelemetrySubscription.addListener(new IssTelemetryListener(HandleTelemetryUpdate));
         }
 
