@@ -33,7 +33,7 @@ namespace iss_data.Model
             telemetryUpdate.Status = update.getValue("Status.Class");
             telemetryUpdate.Indicator = update.getValue("Status.Indicator");
             telemetryUpdate.Color = update.getValue("Status.Color");
-            telemetryUpdate.TimeStamp = IssUtils.ConvertHoursToTimeStamp(update.getValue("TimeStamp")).ToString("yyyy-MM-ddTHH:mm:ss.fff");
+            telemetryUpdate.TimeStamp = IssUtils.ConvertHoursToTimeStamp(update.getValue("TimeStamp")).ToString("o");
             telemetryUpdate.Value = update.getValue("Value");
             telemetryUpdate.CalibratedData = update.getValue("CalibratedData");
 

@@ -14,6 +14,9 @@ namespace iss_data.Services
 
         public DateTime LastMessageReceived { get; internal set; }
         public DateTime LastMessageSent { get; internal set; }
+        public TimeSpan UpTime => (DateTime.UtcNow - _startTime);
+
+        private readonly DateTime _startTime = DateTime.UtcNow;
 
         public string IssSubscriptionState {get; internal set;} = "Not Subscribed";
 
