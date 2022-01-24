@@ -37,7 +37,7 @@ namespace iss_data.Services
             InitializeSubscription();
 
             if (_eventHubSender != null)
-                OnUpdate += (sender, update) => _eventHubSender.SendMessageAsync(JsonSerializer.Serialize<IssTelemetryUpdate>(update));
+                OnUpdate += (sender, update) => Task.Run(() => _eventHubSender.SendMessage(JsonSerializer.Serialize<IssTelemetryUpdate>(update)));
 
             _issClient.connect();
             _issClient.subscribe(_issTelemetrySubscription);
