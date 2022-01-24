@@ -17,16 +17,18 @@ namespace iss_data.Services
         private readonly IssTelemetrySchema _issTelemetry;
         private readonly LightstreamerClient _issClient;
         private readonly EventHubSender _eventHubSender;
+        private readonly IssTelemetryStatistics _statistics;
         private Subscription _issTelemetrySubscription;
         public EventHandler<IssTelemetryUpdate> OnUpdate;
 
-        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, EventHubSender eventHubSender)
+        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, EventHubSender eventHubSender, IssTelemetryStatistics statistics)
         {
             _logger = logger;
             _logger.LogInformation("Creating Iss Streaming Service");
             _issTelemetry = issTelemetrySchema;
             _issClient = new LightstreamerClient("https://push.lightstreamer.com/", "ISSLIVE");
             _eventHubSender = eventHubSender;
+            _statistics = statistics;
         }
 
         public void Start()
@@ -45,7 +47,7 @@ namespace iss_data.Services
         {
             _issTelemetrySubscription = new Subscription("MERGE", _issTelemetry.GetItems, new string[] { "TimeStamp", "Value", "Status.Class", "Status.Indicator", "Status.Color", "CalibratedData" });
             _issTelemetrySubscription.RequestedMaxFrequency = "2";
-            _issTelemetrySubscription.addListener(new IssTelemetryListener(HandleTelemetryUpdate, _logger));
+            _issTelemetrySubscription.addListener(new IssTelemetryListener(HandleTelemetryUpdate, _logger, _statistics));
         }
 
         public void Stop()
@@ -61,6 +63,7 @@ namespace iss_data.Services
             var symbol = discipline.Symbols.FirstOrDefault(s => s.PublicPUI == update.ItemName);
             var telemetryUpdate = IssTelemetryUpdate.FromSymbol(symbol, update);
             telemetryUpdate.Discipline = discipline.Name;
+            _statistics.IncrementMessagesReceived();
             OnUpdate?.Invoke(this, telemetryUpdate);
         }
 

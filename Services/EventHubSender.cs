@@ -15,14 +15,16 @@ namespace iss_data.Services
         private readonly string _connectionString;
         private readonly string _eventHubName;
         private EventHubProducerClient _eventHubClient;
-        private readonly ILogger<EventHubSender> logger;
+        private readonly IssTelemetryStatistics _statistics;
+        private readonly ILogger<EventHubSender> _logger;
 
-        public EventHubSender(ILogger<EventHubSender> logger, IConfiguration configuration)
+        public EventHubSender(ILogger<EventHubSender> logger, IConfiguration configuration, IssTelemetryStatistics statistics)
         {
-            this.logger = logger;
+            _logger = logger;
             _connectionString = configuration["EVENT_HUB_CONNECTION_STRING"];
             _eventHubName = configuration["EVENT_HUB_NAME"];
             _eventHubClient = new EventHubProducerClient(_connectionString, _eventHubName);
+            _statistics = statistics;
         }
 
         private Queue<string> _messageQueue = new Queue<string>();
@@ -32,27 +34,28 @@ namespace iss_data.Services
             try
             {
                 _messageQueue.Enqueue(message);
-                logger.LogInformation(message);
+                _logger.LogTrace(message);
                 if (_messageQueue.Count < 100)
                     return;
 
                 var messages = new List<EventData>();
                 var batchId = Guid.NewGuid().ToString();
 
-                logger.LogInformation("Sending Batch: " + batchId);
+                _logger.LogInformation("Sending Batch: " + batchId);
 
                 for (int i = 0; i < 100; i++)
                 {
                     messages.Add(new EventData(Encoding.UTF8.GetBytes(_messageQueue.Dequeue())));
                 }
 
-                _eventHubClient.SendAsync(messages).Wait();
+                await _eventHubClient.SendAsync(messages).ConfigureAwait(false);
 
-                logger.LogInformation("Send Batch: " + batchId);
+                _statistics.IncrementMessagesSent(100);
+                _logger.LogInformation("Send Batch: " + batchId);
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message);
+                _logger.LogError(ex.Message);
             }
         }
 

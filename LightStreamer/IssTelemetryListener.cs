@@ -1,5 +1,6 @@
 using System;
 using com.lightstreamer.client;
+using iss_data.Services;
 using Microsoft.Extensions.Logging;
 
 namespace iss_data.LightStreamer
@@ -8,10 +9,12 @@ namespace iss_data.LightStreamer
     {
         private readonly Action<ItemUpdate> _onUpdate;
         private readonly ILogger _logger;
+        private readonly IssTelemetryStatistics _statistics;
 
-        public IssTelemetryListener(Action<ItemUpdate> onUpdate, ILogger logger) {
+        public IssTelemetryListener(Action<ItemUpdate> onUpdate, ILogger logger, IssTelemetryStatistics statistics) {
             _onUpdate = onUpdate;
             _logger = logger;
+            _statistics = statistics;
         }
 
         void SubscriptionListener.onClearSnapshot(string itemName, int itemPos)
@@ -47,11 +50,13 @@ namespace iss_data.LightStreamer
         void SubscriptionListener.onListenEnd(Subscription subscription)
         {
             _logger.LogInformation("Listen End for " + string.Join(",",subscription.Items) + ".");
+            _statistics.SetIssSubscriptionState("Disconnected");
         }
 
         void SubscriptionListener.onListenStart(Subscription subscription)
         {
             _logger.LogInformation("Listen Start for " + string.Join(",",subscription.Items) + ".");
+            _statistics.SetIssSubscriptionState("Connected");
         }
 
         void SubscriptionListener.onRealMaxFrequency(string frequency)
@@ -67,11 +72,13 @@ namespace iss_data.LightStreamer
         void SubscriptionListener.onSubscriptionError(int code, string message)
         {
              _logger.LogError("Subscription error: " + message);
+             _statistics.SetIssSubscriptionState($"Error: {message}");
         }
 
         void SubscriptionListener.onUnsubscription()
         {
              _logger.LogInformation("Stop subscription.");
+             
         }
 
     }
