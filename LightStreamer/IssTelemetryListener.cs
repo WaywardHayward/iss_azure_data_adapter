@@ -1,40 +1,42 @@
 using System;
-using System.Collections.Generic;
 using com.lightstreamer.client;
+using Microsoft.Extensions.Logging;
 
 namespace iss_data.LightStreamer
 {
     public class IssTelemetryListener : SubscriptionListener
     {
         private readonly Action<ItemUpdate> _onUpdate;
+        private readonly ILogger _logger;
 
-        public IssTelemetryListener(Action<ItemUpdate> onUpdate) {
+        public IssTelemetryListener(Action<ItemUpdate> onUpdate, ILogger logger) {
             _onUpdate = onUpdate;
+            _logger = logger;
         }
 
         void SubscriptionListener.onClearSnapshot(string itemName, int itemPos)
         {
-            Console.WriteLine("Clear Snapshot for " + itemName + ".");
+            _logger.LogInformation("Clear Snapshot for " + itemName + ".");
         }
 
         void SubscriptionListener.onCommandSecondLevelItemLostUpdates(int lostUpdates, string key)
         {
-            Console.WriteLine("Lost Updates for " + key + " (" + lostUpdates + ").");
+            _logger.LogInformation("Lost Updates for " + key + " (" + lostUpdates + ").");
         }
 
         void SubscriptionListener.onCommandSecondLevelSubscriptionError(int code, string message, string key)
         {
-            Console.WriteLine("Subscription Error for " + key + ": " + message);
+            _logger.LogInformation("Subscription Error for " + key + ": " + message);
         }
 
         void SubscriptionListener.onEndOfSnapshot(string itemName, int itemPos)
         {
-            Console.WriteLine("End of Snapshot for " + itemName + ".");
+            _logger.LogInformation("End of Snapshot for " + itemName + ".");
         }
 
         void SubscriptionListener.onItemLostUpdates(string itemName, int itemPos, int lostUpdates)
         {
-            Console.WriteLine("Lost Updates for " + itemName + " (" + lostUpdates + ").");
+            _logger.LogInformation("Lost Updates for " + itemName + " (" + lostUpdates + ").");
         }
 
         void SubscriptionListener.onItemUpdate(ItemUpdate itemUpdate)
@@ -44,32 +46,32 @@ namespace iss_data.LightStreamer
 
         void SubscriptionListener.onListenEnd(Subscription subscription)
         {
-            // throw new System.NotImplementedException();
+            _logger.LogInformation("Listen End for " + string.Join(",",subscription.Items) + ".");
         }
 
         void SubscriptionListener.onListenStart(Subscription subscription)
         {
-            // throw new System.NotImplementedException();
+            _logger.LogInformation("Listen Start for " + string.Join(",",subscription.Items) + ".");
         }
 
         void SubscriptionListener.onRealMaxFrequency(string frequency)
         {
-            Console.WriteLine("Real frequency: " + frequency + ".");
+             _logger.LogInformation("Real frequency: " + frequency + ".");
         }
 
         void SubscriptionListener.onSubscription()
         {
-            Console.WriteLine("Start subscription.");
+             _logger.LogInformation("Start subscription.");
         }
 
         void SubscriptionListener.onSubscriptionError(int code, string message)
         {
-            Console.WriteLine("Subscription error: " + message);
+             _logger.LogError("Subscription error: " + message);
         }
 
         void SubscriptionListener.onUnsubscription()
         {
-            Console.WriteLine("Stop subscription.");
+             _logger.LogInformation("Stop subscription.");
         }
 
     }

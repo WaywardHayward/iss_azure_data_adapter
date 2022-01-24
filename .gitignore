@@ -1,3 +1,6 @@
 /.vscode
 /bin
 /obj
+
+appsettings.local.json
+appsettings.Development.json

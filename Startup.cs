@@ -19,7 +19,6 @@ namespace iss_data
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddLogging();
             services.AddSingleton<IssTelemetrySchema>((s) => JsonSerializer.Deserialize<IssTelemetrySchema>(File.ReadAllText("Data/iss_telemetry_schema.json")));
@@ -32,6 +31,7 @@ namespace iss_data
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }
