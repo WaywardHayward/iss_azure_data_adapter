@@ -17,6 +17,13 @@ These settings are defined in the appsettings.json file.
 | ------------ | ---- | ----------- |
 | EVENT_HUB_CONNECTION_STRING | string | The connection string to the event hub. |
 | EVENT_HUB_NAME | string | The name of the event hub. |
+| MAX_UPDATE_FREQUENCY | string | Property RequestedMaxFrequency represents the maximum update frequency to be requested to Lightstreamer Server for all the items in the Subscription. |
+
+## Max Update Frequency
+
+The value can be a decimal number, representing the maximum update frequency (expressed in updates per second) for each item in the Subscription; for instance, with a setting of 0.5, for each single item, no more than one update every 2
+seconds will be received. If the string "unlimited" is supplied, then no frequency
+limit is requested. 
 
 ## Json Payload
 
@@ -24,7 +31,7 @@ The schema of the payload for an ISS Telemetry Update is as follows:
 
 ```jsonschema
 
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http:json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "Discipline": {

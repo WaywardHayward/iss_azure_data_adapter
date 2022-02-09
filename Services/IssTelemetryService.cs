@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using com.lightstreamer.client;
 using iss_data.LightStreamer;
 using iss_data.Model;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -20,9 +21,11 @@ namespace iss_data.Services
         private readonly IssTelemetryStatistics _statistics;
         private Subscription _issTelemetrySubscription;
         public EventHandler<IssTelemetryUpdate> OnUpdate;
+        private readonly IConfiguration _configuration;
 
-        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, EventHubSender eventHubSender, IssTelemetryStatistics statistics)
+        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, EventHubSender eventHubSender, IssTelemetryStatistics statistics, IConfiguration configuration)
         {
+            _configuration = configuration;
             _logger = logger;
             _logger.LogInformation("Creating Iss Streaming Service");
             _issTelemetry = issTelemetrySchema;
@@ -45,8 +48,10 @@ namespace iss_data.Services
 
         private void InitializeSubscription()
         {
+            _logger.LogInformation("Initializing Iss Telemetry Subscription");
             _issTelemetrySubscription = new Subscription("MERGE", _issTelemetry.GetItems, new string[] { "TimeStamp", "Value", "Status.Class", "Status.Indicator", "Status.Color", "CalibratedData" });
-            _issTelemetrySubscription.RequestedMaxFrequency = "2";
+            _issTelemetrySubscription.RequestedMaxFrequency = _configuration["MAX_UPDATE_FREQUENCY"] ?? "0.5";
+            _logger.LogInformation("Requested Max Frequency: " + _issTelemetrySubscription.RequestedMaxFrequency);
             _issTelemetrySubscription.addListener(new IssTelemetryListener(HandleTelemetryUpdate, _logger, _statistics));
         }
 
@@ -59,7 +64,7 @@ namespace iss_data.Services
 
         private void HandleTelemetryUpdate(ItemUpdate update)
         {
-            var discipline =  _issTelemetry.Disciplines.FirstOrDefault(s => s.Symbols.Any(s => s.PublicPUI == update.ItemName));
+            var discipline = _issTelemetry.Disciplines.FirstOrDefault(s => s.Symbols.Any(s => s.PublicPUI == update.ItemName));
             var symbol = discipline.Symbols.FirstOrDefault(s => s.PublicPUI == update.ItemName);
             var telemetryUpdate = IssTelemetryUpdate.FromSymbol(symbol, update);
             telemetryUpdate.Discipline = discipline.Name;

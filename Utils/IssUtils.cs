@@ -13,7 +13,8 @@ namespace iss_azure_data_adapter.Utils
         {
             var yearStart = new DateTime(DateTime.Now.Year,1,1);
             var now = yearStart.AddHours(hours);
-            return now;
+            // BUG - REMOVING 24 Hours
+            return now.AddHours(-24);
         }
 
 
