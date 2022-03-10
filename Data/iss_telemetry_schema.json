@@ -10,7 +10,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_EMU1_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack PS #1 Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -22,7 +22,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_EMU1_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack PS #1 Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -34,7 +34,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_EMU2_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack PS #2 Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -46,7 +46,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_EMU2_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack PS #2 Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -58,7 +58,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_IRU_Utility_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack PS #5 Voltage",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -70,7 +70,7 @@
 					"MAX": "",
 					"OPS_NOM": "PSA_IRU_Utility_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack PS #5 Current",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -82,7 +82,7 @@
 					"MAX": "",
 					"OPS_NOM": "UIA_EV_1_VOLTS",
 					"ENG_NOM": "EVAS AL EMU1 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -94,7 +94,7 @@
 					"MAX": "",
 					"OPS_NOM": "UIA_EV_1_AMPS",
 					"ENG_NOM": "EVAS AL EMU1 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -106,7 +106,7 @@
 					"MAX": "",
 					"OPS_NOM": "UIA_EV_2_VOLTS",
 					"ENG_NOM": "EVAS AL EMU2 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -118,7 +118,7 @@
 					"MAX": "",
 					"OPS_NOM": "UIA_EV_2_AMPS",
 					"ENG_NOM": "EVAS AL EMU2 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -130,7 +130,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA1_Analog_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack BC #1 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -142,7 +142,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA1_Analog_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack BC #1 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -154,7 +154,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA2_Analog_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack BC #2 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -166,7 +166,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA2_Analog_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack BC #2 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -178,7 +178,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA3_Analog_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack BC #3 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -190,7 +190,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA3_Analog_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack BC #3 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -202,7 +202,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA4_Analog_VOLTS",
 					"ENG_NOM": "EVAS AL AA Rack BC #4 Voltage Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Volts",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -214,7 +214,7 @@
 					"MAX": "",
 					"OPS_NOM": "BCA4_Analog_AMPS",
 					"ENG_NOM": "EVAS AL AA Rack BC #4 Current Monitor",
-					"UNITS": "CNT",
+					"UNITS": "Amps",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -591,7 +591,7 @@
 					"MAX": "",
 					"OPS_NOM": "Airlock_Crewlock_Cabin_Pressure",
 					"ENG_NOM": "EVAS AL CL Sensor Pressure",
-					"UNITS": "CNT",
+					"UNITS": "torr",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -651,7 +651,7 @@
 					"MAX": "",
 					"OPS_NOM": "Airlock_PCA_Cabin_Pressure",
 					"ENG_NOM": "PCA Cabin Pressure",
-					"UNITS": "PSI",
+					"UNITS": "torr",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -663,7 +663,7 @@
 					"MAX": "",
 					"OPS_NOM": "Airlock_O2_Hi_P_Supply_Pressure",
 					"ENG_NOM": "ACS AL O2 #2 Line Pressure Sensor Data",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -675,7 +675,7 @@
 					"MAX": "",
 					"OPS_NOM": "Airlock_O2_Lo_P_Supply_Pressure",
 					"ENG_NOM": "ACS AL O2 #3 Line Pressure Sensor Data",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -687,7 +687,7 @@
 					"MAX": "",
 					"OPS_NOM": "Airlock_N2_Supply_Pressure",
 					"ENG_NOM": "ACS AL N2 #1 Line Pressure Sensor Data",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -699,7 +699,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node2_MTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP N2 MT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -711,7 +711,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node2_LTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP N2 LT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -735,7 +735,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node2_LTL_TWMV_Out_Temp",
 					"ENG_NOM": "HXB N2 LT CTB Temperature",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -747,7 +747,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node2_MTL_TWMV_Out_Temp",
 					"ENG_NOM": "HXB N2S1 MT CTB Temperature",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -891,7 +891,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node3_MTL_TWMV_Out_Temp",
 					"ENG_NOM": "HXB N3S1 MT 3WMV CTB Temperature Sensor",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -903,7 +903,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node3_LTL_TWMV_Out_Temp",
 					"ENG_NOM": "HXB N3S2 LT 3WMV CTB Temperature Sensor",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -915,7 +915,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node3_MTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP N3S1 MT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -939,7 +939,7 @@
 					"MAX": "",
 					"OPS_NOM": "Node3_LTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP N3S2 LT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -987,7 +987,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_LTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP LAB LT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -999,7 +999,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_MTL_PPA_Avg_Accum_Qty",
 					"ENG_NOM": "PUMP LAB MT Average Accumulator Quantity",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1023,7 +1023,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB1P6_CCAA_In_T1",
 					"ENG_NOM": "CCAA Raw Inlet Temp 1 L1",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1035,7 +1035,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_MTL_Regen_TWMV_Out_Temp",
 					"ENG_NOM": "HXB LAB MT REG Temperature Sensor",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1047,7 +1047,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_LTL_TWMV_Out_Temp",
 					"ENG_NOM": "HXB LAB LT CTB Temperature Sensor",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1059,7 +1059,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_VRS_Vent_Vlv_Posn_Raw",
 					"ENG_NOM": "VRS Vent Valve Position Raw",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "0=FAIL|1=OPEN|2=CLSD|3=TRNS"
 				},
@@ -1071,7 +1071,7 @@
 					"MAX": "",
 					"OPS_NOM": "LAB_VES_Vent_Vlv_Posn_Raw",
 					"ENG_NOM": "VES Vent Valve Position Raw",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "0=FAIL|1=OPEN|2=CLSD|3=TRNS"
 				},
@@ -1669,7 +1669,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopB_PM_Out_Flowrate",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-B_OUT_FL_MTR_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1681,7 +1681,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopB_PM_Out_Press",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-B_OUT_PRESS_XDCR_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1693,7 +1693,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopB_PM_Out_Temp",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-B_OUT_RTD_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1705,7 +1705,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_2A_RBI_6_V",
 					"ENG_NOM": "DCSU P4LWR-2A SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1717,7 +1717,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_2A_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU P4LWR-2A SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1729,7 +1729,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_4A_RBI_6_V",
 					"ENG_NOM": "DCSU P4UPR-4A SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1741,7 +1741,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_4A_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU P4UPR-4A SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1777,7 +1777,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_4B_RBI_6_V",
 					"ENG_NOM": "DCSU P6LWR-4B SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1789,7 +1789,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_4B_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU P6LWR-4B SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1801,7 +1801,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_2B_RBI_6_V",
 					"ENG_NOM": "DCSU P6UPR-2B SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1813,7 +1813,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_2B_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU P6UPR-2B SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1849,7 +1849,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopA_PM_Out_Flowrate",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-A_OUT_FL_MTR_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1861,7 +1861,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopA_PM_Out_Press",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-A_OUT_PRESS_XDCR_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1873,7 +1873,7 @@
 					"MAX": "",
 					"OPS_NOM": "ETCS_LoopA_PM_Out_Temp",
 					"ENG_NOM": "EATCS_PTC_ANALOG_DATA_PM-A_OUT_RTD_MEAS",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1885,7 +1885,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_1A_RBI_6_V",
 					"ENG_NOM": "DCSU S4LWR-1A SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1897,7 +1897,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_1A_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU S4LWR-1A SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1909,7 +1909,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_3A_RBI_6_V",
 					"ENG_NOM": "DCSU S4UPR-3A SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1921,7 +1921,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_3A_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU S4UPR-3A SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1957,7 +1957,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_3B_RBI_6_V",
 					"ENG_NOM": "DCSU S6LWR-3B SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1969,7 +1969,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_3B_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU S6LWR-3B SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
@@ -1981,7 +1981,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_1B_RBI_6_V",
 					"ENG_NOM": "DCSU S6UPR-1B SCA SW06 Raw Voltage",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f1}"
 				},
@@ -1993,7 +1993,7 @@
 					"MAX": "",
 					"OPS_NOM": "DCSU_1B_RBI_6_Integ_I",
 					"ENG_NOM": "DCSU S6UPR-1B SCA SW06 Intg Current",
-					"UNITS": "CNT",
+					"UNITS": "N/A",
 					"ENUM": "",
 					"Format_Spec": "{0:f2}"
 				},
