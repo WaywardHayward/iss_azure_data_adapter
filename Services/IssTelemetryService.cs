@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using com.lightstreamer.client;
 using iss_data.LightStreamer;
 using iss_data.Model;
+using iss_data.Services.Face;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -17,20 +18,20 @@ namespace iss_data.Services
         private readonly ILogger<IssTelemetryService> _logger;
         private readonly IssTelemetrySchema _issTelemetry;
         private readonly LightstreamerClient _issClient;
-        private readonly EventHubSender _eventHubSender;
+        private readonly IUpstreamSender _upstreamSender;
         private readonly IssTelemetryStatistics _statistics;
         private Subscription _issTelemetrySubscription;
         public EventHandler<IssTelemetryUpdate> OnUpdate;
         private readonly IConfiguration _configuration;
 
-        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, EventHubSender eventHubSender, IssTelemetryStatistics statistics, IConfiguration configuration)
+        public IssTelemetryService(ILogger<IssTelemetryService> logger, IssTelemetrySchema issTelemetrySchema, IUpstreamSender upstreamSender, IssTelemetryStatistics statistics, IConfiguration configuration)
         {
             _configuration = configuration;
             _logger = logger;
             _logger.LogInformation("Creating Iss Streaming Service");
             _issTelemetry = issTelemetrySchema;
             _issClient = new LightstreamerClient("https://push.lightstreamer.com/", "ISSLIVE");
-            _eventHubSender = eventHubSender;
+            _upstreamSender = upstreamSender;
             _statistics = statistics;
         }
 
@@ -39,8 +40,8 @@ namespace iss_data.Services
             if (_issTelemetrySubscription != null) return;
             InitializeSubscription();
 
-            if (_eventHubSender != null)
-                OnUpdate += (sender, update) => Task.Run(() => _eventHubSender.SendMessage(JsonSerializer.Serialize<IssTelemetryUpdate>(update)));
+            if (_upstreamSender != null)
+                OnUpdate += (sender, update) => Task.Run(() => _upstreamSender.SendMessage(JsonSerializer.Serialize<IssTelemetryUpdate>(update)));
 
             _issClient.connect();
             _issClient.subscribe(_issTelemetrySubscription);

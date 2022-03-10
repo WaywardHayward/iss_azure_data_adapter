@@ -1,5 +1,5 @@
 # ISS Azure Data Adapter
-A fun side project, This repository contains a dotnet app service which listens to data from the ISS lightstreamer service and sends json messages to a specified Azure Eventhub.
+A fun side project, This repository contains a dotnet app service which listens to data from the ISS lightstreamer service and sends json messages to a specified Azure Eventhub or Azure IoT Hub.
 
 ## Architecture
 
@@ -15,8 +15,11 @@ These settings are defined in the appsettings.json file.
 
 | Setting Name | Type | Description |
 | ------------ | ---- | ----------- |
-| EVENT_HUB_CONNECTION_STRING | string | The connection string to the event hub. |
-| EVENT_HUB_NAME | string | The name of the event hub. |
+| UPSTREAM_CONNECTION_STRING | string | The connection string to the upstream data source, this can be used instead of IOT_HUB_CONNECTION_STRING or EVENT_HUB_CONNECTION string. |
+| UPSTREAM_MODE |string | The mode of the upstream data source, set this to IOT_HUB to send to an IOT_HUB |
+| EVENT_HUB_CONNECTION_STRING | string | The connection string to the event hub. (obselete - use 'UPSTREAM_CONNECTION_STRING') |
+| IOT_HUB_CONNECTION_STRING | string | The connection string to the Iot hub. (obselete - use 'UPSTREAM_CONNECTION_STRING') |
+| EVENT_HUB_NAME | string | The name of the event hub (when sending data to event hubs). |
 | MAX_UPDATE_FREQUENCY | string | Property RequestedMaxFrequency represents the maximum update frequency to be requested to Lightstreamer Server for all the items in the Subscription. |
 
 ## Max Update Frequency
