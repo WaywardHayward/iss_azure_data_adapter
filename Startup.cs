@@ -26,7 +26,7 @@ namespace iss_data
         {
             services.AddLogging();
             services.AddSingleton<IssTelemetryStatistics>();
-            services.AddSingleton<IssTelemetrySchema>((s) => JsonSerializer.Deserialize<IssTelemetrySchema>(File.ReadAllText("Data/iss_telemetry_schema.json")));
+            services.AddSingleton<IssTelemetrySchema>((s) => JsonSerializer.Deserialize<IssTelemetrySchema>(File.ReadAllText("iss_telemetry_schema.json")));
             services.AddUpstreams();
             services.AddHostedService<IssTelemetryService>();
             services.AddControllers();
