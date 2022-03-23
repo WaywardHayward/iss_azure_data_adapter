@@ -14,5 +14,8 @@
     <PackageReference Include="Lightstreamer.DotNetStandard.Client" Version="5.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+   <Content Include="Data\**\*" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>
