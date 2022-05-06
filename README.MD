@@ -1,4 +1,7 @@
 # ISS Azure Data Adapter
+
+[![Build Application](https://github.com/WaywardHayward/iss_azure_data_adapter/actions/workflows/dotnet.yml/badge.svg)](https://github.com/WaywardHayward/iss_azure_data_adapter/actions/workflows/dotnet.yml)
+
 A fun side project, This repository contains a dotnet app service which listens to data from the ISS lightstreamer service and sends json messages to a specified Azure Eventhub or Azure IoT Hub.
 
 ## Architecture
